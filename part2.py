@@ -4,14 +4,19 @@ class HashTable:
         self.table = [[] for _ in range(size)]
     
     def hash_function(self, key):
-        #  universal hash function family
         return hash(key) % self.size
     
     def insert(self, key, value):
-        return None
-    
-    def search(self, key):
-        return None
+        index = self.hash_function(key)
+        for item in self.table[index]:
+            if item[0] == key:
+                item[1] = value
+                return
+        self.table[index].append([key, value])
     
     def delete(self, key):
-        return None
+        index = self.hash_function(key)
+        for i, item in enumerate(self.table[index]):
+            if item[0] == key:
+                del self.table[index][i]
+                return

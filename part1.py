@@ -24,6 +24,10 @@ def randomized_quicksort(arr):
     return arr
 
 
+# Input Distributions: 
+# Measure and compare the running times of both algorithms 
+# on randomly generated arrays, sorted arrays, reverse-sorted 
+# arrays, and arrays with repeated elements.
 def deterministic_quicksort(arr):
     def quicksort(low, high):
         if low < high:
