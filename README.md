@@ -20,6 +20,25 @@ elements, empty arrays, and already sorted arrays.
 - Use concepts such as indicator random variables or recurrence relations in your analysis to demonstrate
 your understanding.
 
+# Answer:
+
+Average-case Time Complexity:
+
+Expected Complexity: 𝑂(𝑛 log𝑛)
+O(nlogn).
+
+Explanation: The average-case time complexity of Randomized Quicksort is 𝑂(𝑛 log𝑛)
+
+O(nlogn) due to the random pivot selection which tends to divide the array into roughly equal halves on average. The recurrence relation for the average case is
+- 𝑇(𝑛)=𝑇(𝑛2)+𝑂(𝑛)
+- T(n)=T( 2n )+O(n) 
+
+which solves to 𝑂(𝑛 log⁡𝑛) = O(nlogn).
+
+Using Indicator Random Variables:
+
+To show why the expected time complexity is 𝑂(𝑛 log 𝑛) O(nlogn), you can use indicator random variables to represent the cost of partitioning and then sum these costs over all recursive calls.
+
 ### 3. Comparison
 - Empirically compare the running time of Randomized Quicksort with Deterministic Quicksort (using the
 first element as the pivot) on different input sizes and distributions:
@@ -56,6 +75,47 @@ Sorted array: [1, 2, 2, 3, 11, 11, 11, 12, 12, 31, 31, 331]
 - Insert: Add a key-value pair to the hash table.
 - Search: Retrieve a value associated with a given key.
 - Delete: Remove a key-value pair from the hash table.
+
+### Output
+
+```
+python3 main_part2.py
+
+Hash Table Operations:
+1. Insert
+2. Search
+3. Delete
+4. Exit
+Enter choice (1/2/3/4): 1
+Enter key: 2
+Enter value: 12
+Inserted (2: 12)
+
+Hash Table Operations:
+1. Insert
+2. Search
+3. Delete
+4. Exit
+Enter choice (1/2/3/4): 2
+Enter key: 2
+Value for key '2': 12
+
+Hash Table Operations:
+1. Insert
+2. Search
+3. Delete
+4. Exit
+Enter choice (1/2/3/4): 3
+Enter key: 2
+Deleted key '2'
+
+Hash Table Operations:
+1. Insert
+2. Search
+3. Delete
+4. Exit
+Enter choice (1/2/3/4): 4
+```
 
 ### 2. Analysis
 - Analyze the expected search, insert, and delete times under the assumption of simple uniform hashing.
