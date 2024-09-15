@@ -1,6 +1,6 @@
 import sys
 import random
-from part1 import randomized_quicksort  #Import part 1
+from part1 import deterministic_quicksort, randomized_quicksort  #Import part 1
 
 def main():
     print("Enter a list of integers separated by spaces:")
@@ -20,6 +20,15 @@ def main():
     randomized_quicksort(arr)
     print("Sorted array:", arr)
     print("\n")
+
+ 
+    print("\n")
+    print("Original array:", arr)
+    deterministic_quicksort(arr)
+    print("Sorted array:", arr)
+    print("\n")
+
+       
 
 if __name__ == '__main__':
     main()

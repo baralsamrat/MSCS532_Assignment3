@@ -1,5 +1,6 @@
 import random
-
+# Pivot Selection: Randomly choose the pivot element from the subarray.
+# Edge Cases: Handle various cases, such as arrays with repeated elements, empty arrays, and already sorted arrays.
 def randomized_quicksort(arr):
     def quicksort(low, high):
         if low < high:
@@ -18,6 +19,32 @@ def randomized_quicksort(arr):
                 store_index += 1
         arr[store_index], arr[high] = arr[high], arr[store_index]
         return store_index
+
+    quicksort(0, len(arr) - 1)
+    return arr
+
+
+def deterministic_quicksort(arr):
+    def quicksort(low, high):
+        if low < high:
+            pivot_new_index = partition(low, high)
+            quicksort(low, pivot_new_index - 1)
+            quicksort(pivot_new_index + 1, high)
+    
+    def partition(low, high):
+        pivot_value = arr[low]
+        left = low + 1
+        right = high
+        while True:
+            while left <= right and arr[left] <= pivot_value:
+                left += 1
+            while left <= right and arr[right] >= pivot_value:
+                right -= 1
+            if left > right:
+                break
+            arr[left], arr[right] = arr[right], arr[left]
+        arr[low], arr[right] = arr[right], arr[low]
+        return right
 
     quicksort(0, len(arr) - 1)
     return arr

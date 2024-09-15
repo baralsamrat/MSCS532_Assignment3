@@ -38,6 +38,11 @@ python3 main_part1.py
 
 Enter a list of integers separated by spaces:
 11 2 31 12 31 331 11 11 12 1 2 3
+
+
+Original array: [11, 2, 31, 12, 31, 331, 11, 11, 12, 1, 2, 3]
+Sorted array: [1, 2, 2, 3, 11, 11, 11, 12, 12, 31, 31, 331]
+
  
 ```
 
