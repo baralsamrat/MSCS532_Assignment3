@@ -12,12 +12,14 @@ def main():
     try:
         arr = list(map(int, input_string.split()))
     except ValueError:
-        print("Invalid input. Please enter integers only.")
+        print("Invalid input. Please enter integers only.\n ")
         return
 
+    print("\n")
     print("Original array:", arr)
     randomized_quicksort(arr)
     print("Sorted array:", arr)
+    print("\n")
 
 if __name__ == '__main__':
     main()

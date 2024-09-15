@@ -30,6 +30,17 @@ first element as the pivot) on different input sizes and distributions:
 - Discuss the observed differences in running time and relate them to your theoretical analysis. Explain any
 discrepancies between the empirical results and the expected theoretical performance.
 
+### Output:
+
+
+```
+python3 main_part1.py
+
+Enter a list of integers separated by spaces:
+11 2 31 12 31 331 11 11 12 1 2 3
+ 
+```
+
 # Part 2: Hashing with Chaining
 
 
