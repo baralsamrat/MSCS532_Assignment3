@@ -14,6 +14,13 @@ class HashTable:
                 return
         self.table[index].append([key, value])
     
+    def search(self, key):
+        index = self.hash_function(key)
+        for item in self.table[index]:
+            if item[0] == key:
+                return item[1]
+        return None
+    
     def delete(self, key):
         index = self.hash_function(key)
         for i, item in enumerate(self.table[index]):
