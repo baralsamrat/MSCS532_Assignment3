@@ -1,5 +1,7 @@
 import unittest
-from part2 import HashTable  # Replace 'your_module' with the actual module name
+import csv
+from part1 import randomized_quicksort 
+from part2 import HashTable  
 
 class TestHashTable(unittest.TestCase):
     def setUp(self):
@@ -34,34 +36,31 @@ class TestHashTable(unittest.TestCase):
         for i in range(20):
             self.table.insert(f'key{i}', f'value{i}')
         self.assertGreater(self.table.size, initial_size)
+    
+    def test_quicksort_on_file(filename):
+        with open(filename, 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                arr = list(map(int, row))
+                sorted_arr = sorted(arr)
+                randomized_quicksort(arr)
+                assert arr == sorted_arr, f"Failed for {arr}"
+                print(f"Test passed for {arr}")
+                
+    def test_hashtable_on_data(data):
+        table = HashTable(size=5)
+        for key, value in data:
+            table.insert(key, value)
+            assert table.search(key) == value, f"Failed to find {key}"
+        print("Hash table tests passed.")
+    
 
 if __name__ == '__main__':
     unittest.main()
-
-import csv
-from your_module import randomized_quicksort, HashTable  # Replace 'your_module' with the actual module name
-
-def test_quicksort_on_file(filename):
-    with open(filename, 'r') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            arr = list(map(int, row))
-            sorted_arr = sorted(arr)
-            randomized_quicksort(arr)
-            assert arr == sorted_arr, f"Failed for {arr}"
-            print(f"Test passed for {arr}")
-
-def test_hashtable_on_data(data):
-    table = HashTable(size=5)
-    for key, value in data:
-        table.insert(key, value)
-        assert table.search(key) == value, f"Failed to find {key}"
-    print("Hash table tests passed.")
-
-if __name__ == '__main__':
-    # Example of testing Randomized Quicksort
-    test_quicksort_on_file('data/random_numbers.csv')  # Replace with the path to your CSV file
     
-    # Example of testing Hash Table with sample data
-    sample_data = [('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3')]
+    # testing Randomized Quicksort
+    # test_quicksort_on_file('data/random_numbers.csv')  # CSV file NEEDED [TODO]
+    
+    # testing Hash Table with sample data
+    sample_data = [('1', 'value1'), ('2', 'value2'), ('3', 'value3')]
     test_hashtable_on_data(sample_data)
