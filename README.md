@@ -1,5 +1,7 @@
 ## Assignment 3: Understanding Algorithm Efficiency and Scalability
 
+[Report of Assignment]({% Report.md %})
+
 ### Overview:
 This assignment is designed to deepen your understanding of how algorithms perform under different
 conditions. You will analyze and compare the efficiency and scalability of two key algorithms: Randomized
